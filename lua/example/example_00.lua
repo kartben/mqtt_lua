@@ -46,9 +46,8 @@ args = lapp [[
   -t,--topic2  (default test/2)      Publish topic
 ]]
 
-local MQTT = require("mqtt_library")
-
-mqtt_client = MQTT.client.create(args.host, args.port, callback)
+local mqtt = require("mqtt_library")
+local mqtt_client = mqtt.client.create(args.host, args.port, callback)
 
 mqtt_client:connect(args.id)
 
